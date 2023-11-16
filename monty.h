@@ -8,6 +8,7 @@
 	{"pop", pop},\
 	{"swap", swap},\
 	{"add", add}, \
+	{"nop", nop}, \
 }
 
 #include <stdio.h>
