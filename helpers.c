@@ -8,6 +8,12 @@ void empty_line(void)
 	int i = 0, j = 0;
 	char *new_buffer = malloc(2048);
 
+	if (!new_buffer)
+	{
+		fprintf(stderr, "Error: malloc failed\n");
+		free(cmd->buffer), free(cmd);
+		exit(EXIT_FAILURE);
+	}
 	for (i = 0; cmd->buffer[i] != '\0'; i++)
 	{
 		if (cmd->buffer[i] == '\n' && cmd->buffer[i + 1] == '\n')

@@ -21,7 +21,18 @@ int main(int argc, char *argv[])
 	}
 
 	cmd = malloc(sizeof(command_t));
+	if (!cmd)
+	{
+		fprintf(stderr, "Error: malloc failed\n");
+		exit(EXIT_FAILURE);
+	}
 	cmd->buffer = malloc(1024);
+	if (!cmd->buffer)
+	{
+		fprintf(stderr, "Error: malloc failed\n");
+		free(cmd);
+		exit(EXIT_FAILURE);
+	}
 
 	filename = argv[1];
 	read_file(filename);
