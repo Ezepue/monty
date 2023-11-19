@@ -39,7 +39,7 @@ void Montydiv(stack_t **stack, unsigned int line_number)
 
 	if ((*stack)->n == 0)
 	{
-		fprintf(stderr, "L%d: division by zero", line_number);
+		fprintf(stderr, "L%d: division by zero\n", line_number);
 		free_all(stack);
 		exit(EXIT_FAILURE);
 	}
@@ -67,7 +67,7 @@ void Montymod(stack_t **stack, unsigned int line_number)
 
 	if ((*stack)->n == 0)
 	{
-		fprintf(stderr, "L%d: division by zero", line_number);
+		fprintf(stderr, "L%d: division by zero\n", line_number);
 		free_all(stack);
 		exit(EXIT_FAILURE);
 	}

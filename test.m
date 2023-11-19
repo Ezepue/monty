@@ -1,4 +1,3 @@
-push 5
-push 3
-sub
-pint
+push 12
+push 0
+div
