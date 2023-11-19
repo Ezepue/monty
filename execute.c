@@ -16,7 +16,7 @@ void execute(void)
 
 		line_num = i + 1;
 		extract_commands(cmd->lines[i]);
-		if (cmd->args[0][0] == '#')
+		if (!cmd->args[0] || cmd->args[0][0] == '#')
 		{
 			free_args();
 			continue;
@@ -25,7 +25,7 @@ void execute(void)
 
 		for (j = 0; j < (sizeof(ops) / sizeof(ops[0])); j++)
 		{
-			if (strcmp(cmd->args[0], ops[j].opcode) == 0)
+			if (cmd->args[0] && strcmp(cmd->args[0], ops[j].opcode) == 0)
 				executor = ops[j].f;
 		}
 		if (executor != NULL)

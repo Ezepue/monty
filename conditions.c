@@ -10,7 +10,7 @@ void condition(stack_t *stack, unsigned long int line_num)
 	char *endptr;
 	int num = 0;
 
-	if (strcmp(cmd->args[0], "push") == 0)
+	if (cmd->args[0] && strcmp(cmd->args[0], "push") == 0)
 	{
 		if (cmd->args[1] == NULL)
 		{

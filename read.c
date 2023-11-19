@@ -42,7 +42,7 @@ void tokenize(void)
 		cmd->lines[i] = NULL;
 
 	i = 0;
-	token = strtok(cmd->buffer, "\n");
+	token = strtok(cmd->buffer, "\n\t");
 	while (token != NULL)
 	{
 		cmd->lines[i] = _strdup(token);
