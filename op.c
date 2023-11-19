@@ -9,7 +9,7 @@ void Montysub(stack_t **stack, unsigned int line_number)
 {
 	int temp;
 
-	if (*stack == NULL || (*stack)->next == NULL)
+	if (*stack == NULL || (*stack)->next == NULL || (*stack)->next->next == NULL)
 	{
 		fprintf(stderr, "L%d: can't add, stack too short\n", line_number);
 		free_all(stack);
@@ -30,7 +30,7 @@ void Montydiv(stack_t **stack, unsigned int line_number)
 {
 	int temp;
 
-	if (*stack == NULL || (*stack)->next == NULL)
+	if (*stack == NULL || (*stack)->next == NULL || (*stack)->next->next == NULL)
 	{
 		fprintf(stderr, "L%d: can't add, stack too short\n", line_number);
 		free_all(stack);
@@ -58,7 +58,7 @@ void Montymod(stack_t **stack, unsigned int line_number)
 {
 	int temp;
 
-	if (*stack == NULL || (*stack)->next == NULL)
+	if (*stack == NULL || (*stack)->next == NULL || (*stack)->next->next == NULL)
 	{
 		fprintf(stderr, "L%d: can't add, stack too short\n", line_number);
 		free_all(stack);
@@ -86,7 +86,7 @@ void Montymul(stack_t **stack, unsigned int line_number)
 {
 	int temp;
 
-	if (*stack == NULL || (*stack)->next == NULL)
+	if (*stack == NULL || (*stack)->next == NULL || (*stack)->next->next == NULL)
 	{
 		fprintf(stderr, "L%d: can't add, stack too short\n", line_number);
 		free_all(stack);
