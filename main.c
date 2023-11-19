@@ -14,14 +14,14 @@ int main(int argc, char *argv[])
 	int i = 0;
 	char *filename = NULL;
 
-	cmd = malloc(sizeof(command_t));
-	cmd->buffer = malloc(1024);
-
 	if (argc != 2)
 	{
-		printf("Usage: <monty> <file>\n");
-		exit(-1);
+		printf("Usage: monty file\n");
+		exit(EXIT_FAILURE);
 	}
+
+	cmd = malloc(sizeof(command_t));
+	cmd->buffer = malloc(1024);
 
 	filename = argv[1];
 	read_file(filename);
