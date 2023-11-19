@@ -38,6 +38,10 @@ void tokenize(void)
 	char *token = NULL;
 	int i = 0;
 
+	for (i = 0; i < BUFFER_SIZE; i++)
+		cmd->lines[i] = NULL;
+
+	i = 0;
 	token = strtok(cmd->buffer, "\n");
 	while (token != NULL)
 	{

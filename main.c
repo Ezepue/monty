@@ -16,8 +16,6 @@ int main(int argc, char *argv[])
 
 	cmd = malloc(sizeof(command_t));
 	cmd->buffer = malloc(1024);
-	for (i = 0; i < BUFFER_SIZE; i++)
-		cmd->lines[i] = NULL;
 
 	if (argc != 2)
 	{
@@ -27,6 +25,7 @@ int main(int argc, char *argv[])
 
 	filename = argv[1];
 	read_file(filename);
+	empty_line();
 	tokenize();
 	execute();
 

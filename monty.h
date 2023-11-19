@@ -9,6 +9,10 @@
 	{"swap", swap},\
 	{"add", add}, \
 	{"nop", nop}, \
+	{"sub", Montysub}, \
+	{"mul", Montymul},\
+	{"div", Montydiv},\
+	{"mod", Montymod},\
 }
 
 #include <stdio.h>
@@ -73,11 +77,20 @@ void pop(stack_t **stack, unsigned int line_number);
 void swap(stack_t **stack, unsigned int line_number);
 void add(stack_t **stack, unsigned int line_number);
 void nop(stack_t **stack, unsigned int line_number);
+void Montysub(stack_t **stack, unsigned int line_number);
+void Montymod(stack_t **stack, unsigned int line_number);
+void Montydiv(stack_t **stack, unsigned int line_number);
+void Montymul(stack_t **stack, unsigned int line_number);
 
 void read_file(char *filename);
 void tokenize(void);
 void extract_commands(char *line);
 void execute(void);
 char *_strdup(char *s);
+void free_all(stack_t **stack);
+void free_stack(stack_t **stack);
+void empty_line(void);
+void condition(stack_t *stack, unsigned long int line_num);
+void free_args(void);
 
 #endif /* MONTY_H */
