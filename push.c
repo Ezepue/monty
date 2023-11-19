@@ -10,13 +10,9 @@ void push(stack_t **stack, unsigned int line_number)
 	int num = cmd->num;
 
 	(void)line_number;
-	if (!add_node(stack, num))
-	{
-		fprintf(stderr, "Error: malloc failed\n");
-		free_all(stack);
-		exit(EXIT_FAILURE);
-	}
+	add_node(stack, num);
 }
+
 
 /**
  * pall - prints all values on the stack starting from the top.
@@ -48,8 +44,8 @@ stack_t *add_node(stack_t **head, const int n)
 {
 	stack_t *new;
 
-	new = malloc(sizeof(stack_t));
-	if (!new)
+	new = (stack_t *)malloc(sizeof(stack_t));
+	if (!new || new == NULL)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
 		free_all(head);

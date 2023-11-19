@@ -9,6 +9,9 @@ void free_stack(stack_t **stack)
 {
 	stack_t *current = *stack, *temp;
 
+	if (*stack == NULL || !(*stack))
+		return;
+
 	while (current)
 	{
 		temp = current;
